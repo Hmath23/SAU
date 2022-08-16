@@ -59,7 +59,7 @@ namespace SAU
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(7, 87);
+            this.lblNome.Location = new System.Drawing.Point(12, 42);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(134, 20);
             this.lblNome.TabIndex = 0;
@@ -69,7 +69,7 @@ namespace SAU
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndereco.Location = new System.Drawing.Point(7, 121);
+            this.lblEndereco.Location = new System.Drawing.Point(12, 76);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(78, 20);
             this.lblEndereco.TabIndex = 1;
@@ -78,7 +78,7 @@ namespace SAU
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(147, 84);
+            this.txtNome.Location = new System.Drawing.Point(152, 39);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(424, 26);
@@ -87,7 +87,7 @@ namespace SAU
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(147, 118);
+            this.txtEndereco.Location = new System.Drawing.Point(152, 73);
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(255, 26);
@@ -96,7 +96,7 @@ namespace SAU
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(588, 49);
+            this.btnSalvar.Location = new System.Drawing.Point(593, 4);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(92, 30);
             this.btnSalvar.TabIndex = 9;
@@ -106,7 +106,7 @@ namespace SAU
             // btnListar
             // 
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.Location = new System.Drawing.Point(588, 111);
+            this.btnListar.Location = new System.Drawing.Point(593, 66);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(92, 30);
             this.btnListar.TabIndex = 10;
@@ -116,7 +116,7 @@ namespace SAU
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(588, 163);
+            this.btnLimpar.Location = new System.Drawing.Point(593, 118);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(92, 30);
             this.btnLimpar.TabIndex = 11;
@@ -127,7 +127,7 @@ namespace SAU
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(588, 218);
+            this.btnSair.Location = new System.Drawing.Point(593, 173);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(92, 30);
             this.btnSair.TabIndex = 12;
@@ -139,7 +139,7 @@ namespace SAU
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(7, 54);
+            this.lblCodigo.Location = new System.Drawing.Point(12, 9);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(120, 20);
             this.lblCodigo.TabIndex = 6;
@@ -149,7 +149,7 @@ namespace SAU
             // 
             this.lblNumeroEndereco.AutoSize = true;
             this.lblNumeroEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroEndereco.Location = new System.Drawing.Point(408, 121);
+            this.lblNumeroEndereco.Location = new System.Drawing.Point(413, 76);
             this.lblNumeroEndereco.Name = "lblNumeroEndereco";
             this.lblNumeroEndereco.Size = new System.Drawing.Size(26, 20);
             this.lblNumeroEndereco.TabIndex = 7;
@@ -159,7 +159,7 @@ namespace SAU
             // 
             this.lblBairro.AutoSize = true;
             this.lblBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBairro.Location = new System.Drawing.Point(7, 158);
+            this.lblBairro.Location = new System.Drawing.Point(12, 113);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(51, 20);
             this.lblBairro.TabIndex = 8;
@@ -169,7 +169,7 @@ namespace SAU
             // 
             this.lblCidade.AutoSize = true;
             this.lblCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCidade.Location = new System.Drawing.Point(267, 158);
+            this.lblCidade.Location = new System.Drawing.Point(272, 113);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(59, 20);
             this.lblCidade.TabIndex = 9;
@@ -179,7 +179,7 @@ namespace SAU
             // 
             this.lblUF.AutoSize = true;
             this.lblUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUF.Location = new System.Drawing.Point(464, 160);
+            this.lblUF.Location = new System.Drawing.Point(469, 115);
             this.lblUF.Name = "lblUF";
             this.lblUF.Size = new System.Drawing.Size(31, 20);
             this.lblUF.TabIndex = 10;
@@ -189,7 +189,7 @@ namespace SAU
             // 
             this.lblCep.AutoSize = true;
             this.lblCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCep.Location = new System.Drawing.Point(7, 190);
+            this.lblCep.Location = new System.Drawing.Point(12, 145);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(38, 20);
             this.lblCep.TabIndex = 11;
@@ -199,7 +199,7 @@ namespace SAU
             // 
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone.Location = new System.Drawing.Point(7, 221);
+            this.lblTelefone.Location = new System.Drawing.Point(12, 176);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(71, 20);
             this.lblTelefone.TabIndex = 12;
@@ -209,7 +209,7 @@ namespace SAU
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(267, 221);
+            this.lblEmail.Location = new System.Drawing.Point(272, 176);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(48, 20);
             this.lblEmail.TabIndex = 13;
@@ -220,7 +220,7 @@ namespace SAU
             this.txtCodigo.BackColor = System.Drawing.SystemColors.Window;
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(147, 51);
+            this.txtCodigo.Location = new System.Drawing.Point(152, 6);
             this.txtCodigo.MaxLength = 11;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(114, 26);
@@ -229,7 +229,7 @@ namespace SAU
             // txtNumeroEndereco
             // 
             this.txtNumeroEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroEndereco.Location = new System.Drawing.Point(440, 118);
+            this.txtNumeroEndereco.Location = new System.Drawing.Point(445, 73);
             this.txtNumeroEndereco.MaxLength = 5;
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(131, 26);
@@ -238,7 +238,7 @@ namespace SAU
             // txtBairro
             // 
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairro.Location = new System.Drawing.Point(147, 155);
+            this.txtBairro.Location = new System.Drawing.Point(152, 110);
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(114, 26);
@@ -247,7 +247,7 @@ namespace SAU
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(332, 155);
+            this.txtCidade.Location = new System.Drawing.Point(337, 110);
             this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(126, 26);
@@ -256,7 +256,7 @@ namespace SAU
             // txtUF
             // 
             this.txtUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUF.Location = new System.Drawing.Point(501, 155);
+            this.txtUF.Location = new System.Drawing.Point(506, 110);
             this.txtUF.MaxLength = 2;
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(70, 26);
@@ -265,16 +265,17 @@ namespace SAU
             // txtCep
             // 
             this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCep.Location = new System.Drawing.Point(147, 187);
+            this.txtCep.Location = new System.Drawing.Point(152, 142);
             this.txtCep.MaxLength = 8;
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(114, 26);
             this.txtCep.TabIndex = 6;
+            //this.txtCep.TextChanged += new System.EventHandler(this.txtCep_TextChanged);
             // 
             // txtTelefone
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(147, 218);
+            this.txtTelefone.Location = new System.Drawing.Point(152, 173);
             this.txtTelefone.MaxLength = 11;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(114, 26);
@@ -283,7 +284,7 @@ namespace SAU
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(321, 218);
+            this.txtEmail.Location = new System.Drawing.Point(326, 173);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(250, 26);
@@ -294,7 +295,7 @@ namespace SAU
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(712, 283);
+            this.ClientSize = new System.Drawing.Size(694, 207);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.txtCep);

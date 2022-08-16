@@ -16,7 +16,7 @@ namespace SAU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmContatos());
+            Application.Run(new frmIdade());
         }
     }
 }
