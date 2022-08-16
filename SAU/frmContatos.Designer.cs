@@ -48,7 +48,6 @@ namespace SAU
             this.lblNome.Size = new System.Drawing.Size(134, 20);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome do Contato";
-            this.lblNome.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblEndereco
             // 
@@ -67,7 +66,7 @@ namespace SAU
             this.txtNome.MaxLength = 10;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(424, 26);
-            this.txtNome.TabIndex = 2;
+            this.txtNome.TabIndex = 0;
             // 
             // txtEndereco
             // 
@@ -75,7 +74,7 @@ namespace SAU
             this.txtEndereco.Location = new System.Drawing.Point(197, 149);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(424, 26);
-            this.txtEndereco.TabIndex = 3;
+            this.txtEndereco.TabIndex = 1;
             // 
             // btnSalvar
             // 
@@ -83,7 +82,7 @@ namespace SAU
             this.btnSalvar.Location = new System.Drawing.Point(61, 215);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(92, 30);
-            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.TabIndex = 2;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -93,7 +92,7 @@ namespace SAU
             this.btnListar.Location = new System.Drawing.Point(220, 215);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(92, 30);
-            this.btnListar.TabIndex = 5;
+            this.btnListar.TabIndex = 3;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             // 
@@ -103,7 +102,7 @@ namespace SAU
             this.btnLimpar.Location = new System.Drawing.Point(380, 215);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(92, 30);
-            this.btnLimpar.TabIndex = 6;
+            this.btnLimpar.TabIndex = 4;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -114,7 +113,7 @@ namespace SAU
             this.btnSair.Location = new System.Drawing.Point(529, 215);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(92, 30);
-            this.btnSair.TabIndex = 7;
+            this.btnSair.TabIndex = 5;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
