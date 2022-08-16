@@ -82,7 +82,7 @@ namespace SAU
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(424, 26);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 0;
             // 
             // txtEndereco
             // 
@@ -91,7 +91,7 @@ namespace SAU
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(255, 26);
-            this.txtEndereco.TabIndex = 2;
+            this.txtEndereco.TabIndex = 1;
             // 
             // btnSalvar
             // 
@@ -99,7 +99,7 @@ namespace SAU
             this.btnSalvar.Location = new System.Drawing.Point(588, 49);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(92, 30);
-            this.btnSalvar.TabIndex = 10;
+            this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
@@ -109,7 +109,7 @@ namespace SAU
             this.btnListar.Location = new System.Drawing.Point(588, 111);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(92, 30);
-            this.btnListar.TabIndex = 11;
+            this.btnListar.TabIndex = 10;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
             // 
@@ -119,7 +119,7 @@ namespace SAU
             this.btnLimpar.Location = new System.Drawing.Point(588, 163);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(92, 30);
-            this.btnLimpar.TabIndex = 12;
+            this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -130,7 +130,7 @@ namespace SAU
             this.btnSair.Location = new System.Drawing.Point(588, 218);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(92, 30);
-            this.btnSair.TabIndex = 13;
+            this.btnSair.TabIndex = 12;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -139,7 +139,7 @@ namespace SAU
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(12, 54);
+            this.lblCodigo.Location = new System.Drawing.Point(7, 54);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(120, 20);
             this.lblCodigo.TabIndex = 6;
@@ -218,12 +218,13 @@ namespace SAU
             // txtCodigo
             // 
             this.txtCodigo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(147, 51);
             this.txtCodigo.MaxLength = 11;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(114, 26);
-            this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.TabIndex = 100;
             // 
             // txtNumeroEndereco
             // 
@@ -232,7 +233,7 @@ namespace SAU
             this.txtNumeroEndereco.MaxLength = 5;
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(131, 26);
-            this.txtNumeroEndereco.TabIndex = 3;
+            this.txtNumeroEndereco.TabIndex = 2;
             // 
             // txtBairro
             // 
@@ -241,7 +242,7 @@ namespace SAU
             this.txtBairro.MaxLength = 50;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(114, 26);
-            this.txtBairro.TabIndex = 4;
+            this.txtBairro.TabIndex = 3;
             // 
             // txtCidade
             // 
@@ -250,8 +251,7 @@ namespace SAU
             this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(126, 26);
-            this.txtCidade.TabIndex = 5;
-            //this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
+            this.txtCidade.TabIndex = 4;
             // 
             // txtUF
             // 
@@ -260,7 +260,7 @@ namespace SAU
             this.txtUF.MaxLength = 2;
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(70, 26);
-            this.txtUF.TabIndex = 6;
+            this.txtUF.TabIndex = 5;
             // 
             // txtCep
             // 
@@ -269,7 +269,7 @@ namespace SAU
             this.txtCep.MaxLength = 8;
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(114, 26);
-            this.txtCep.TabIndex = 7;
+            this.txtCep.TabIndex = 6;
             // 
             // txtTelefone
             // 
@@ -278,7 +278,7 @@ namespace SAU
             this.txtTelefone.MaxLength = 11;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(114, 26);
-            this.txtTelefone.TabIndex = 8;
+            this.txtTelefone.TabIndex = 7;
             // 
             // txtEmail
             // 
@@ -287,7 +287,7 @@ namespace SAU
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(250, 26);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 8;
             // 
             // frmContatos
             // 
