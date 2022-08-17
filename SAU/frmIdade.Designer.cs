@@ -73,6 +73,7 @@ namespace SAU
             this.txtIdade.Name = "txtIdade";
             this.txtIdade.Size = new System.Drawing.Size(278, 26);
             this.txtIdade.TabIndex = 1;
+            this.txtIdade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdade_KeyPress_1);
             // 
             // btnEnviar
             // 
