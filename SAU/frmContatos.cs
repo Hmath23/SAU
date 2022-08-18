@@ -27,10 +27,9 @@ namespace SAU
             txtBairro.Clear();
             txtCidade.Clear();
             txtUF.Clear();
-            txtCep.Clear();
+            mskCep.Clear();
             txtTelefone.Clear();
             txtEmail.Clear();
-
 
             //Posicionar o cursor
             txtCodigo.Focus();
@@ -40,9 +39,59 @@ namespace SAU
         {
             //Rotina para sair do form;
             //Enviar mensagem
-            MessageBox.Show("Deseja realemte sair?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if(MessageBox.Show("Deseja realemte sair?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
         }
 
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            //Tornar visível o grupo grpContatos
+            grpContatos.Visible = true;
 
+            //Habilitar os controles abaixo
+            txtNome.Enabled = false;
+            txtEndereco.Enabled = false;
+            txtNumeroEndereco.Enabled = false;
+            txtBairro.Enabled = false;
+            txtCidade.Enabled = false;
+            txtUF.Enabled = false;
+            mskCep.Enabled = false;
+            txtTelefone.Enabled = false;
+            txtEmail.Enabled = false;
+
+            btnSalvar.Enabled = false;
+            btnListar.Enabled = false;
+            btnLimpar.Enabled = false;
+            btnSair.Enabled = false;
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            //Tornar invisível o grupo grpContatos
+            grpContatos.Visible = false;
+
+            //Desabilitar os controles abaixo
+            txtNome.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtNumeroEndereco.Enabled = true;
+            txtBairro.Enabled = true;
+            txtCidade.Enabled = true;
+            txtUF.Enabled = true;
+            mskCep.Enabled = true;
+            txtTelefone.Enabled = true;
+            txtEmail.Enabled = true;
+
+            btnSalvar.Enabled = true;
+            btnListar.Enabled = true;
+            btnLimpar.Enabled = true;
+            btnSair.Enabled = true;
+        }
+
+        private void txtCep_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
