@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAU", "SAU\SAU.csproj", "{746BCDFB-6853-4265-A89C-26D4EEB95B72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcessoBanco", "AcessoBanco\AcessoBanco.csproj", "{386BDA12-07F3-41AA-A8B4-84C41C44B8EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferenciaDados", "TransferenciaDados\TransferenciaDados.csproj", "{6E876DF7-06C8-46D1-9754-C5A026591EF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{746BCDFB-6853-4265-A89C-26D4EEB95B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{746BCDFB-6853-4265-A89C-26D4EEB95B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{746BCDFB-6853-4265-A89C-26D4EEB95B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{386BDA12-07F3-41AA-A8B4-84C41C44B8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{386BDA12-07F3-41AA-A8B4-84C41C44B8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{386BDA12-07F3-41AA-A8B4-84C41C44B8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{386BDA12-07F3-41AA-A8B4-84C41C44B8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E876DF7-06C8-46D1-9754-C5A026591EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E876DF7-06C8-46D1-9754-C5A026591EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E876DF7-06C8-46D1-9754-C5A026591EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E876DF7-06C8-46D1-9754-C5A026591EF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
