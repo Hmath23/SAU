@@ -54,11 +54,11 @@ namespace SAU
             // pctPrincipal
             // 
             this.pctPrincipal.Image = global::SAU.Properties.Resources.HMTZ;
-            this.pctPrincipal.Location = new System.Drawing.Point(244, 32);
-            this.pctPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctPrincipal.Location = new System.Drawing.Point(225, 32);
+            this.pctPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.pctPrincipal.Name = "pctPrincipal";
-            this.pctPrincipal.Size = new System.Drawing.Size(497, 474);
-            this.pctPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pctPrincipal.Size = new System.Drawing.Size(530, 474);
+            this.pctPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctPrincipal.TabIndex = 1;
             this.pctPrincipal.TabStop = false;
             this.pctPrincipal.Click += new System.EventHandler(this.pctPrincipal_Click);
@@ -69,7 +69,7 @@ namespace SAU
             this.panel1.Controls.Add(this.btnContatos);
             this.panel1.Controls.Add(this.btnChamados);
             this.panel1.Location = new System.Drawing.Point(11, 58);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(185, 448);
             this.panel1.TabIndex = 0;
@@ -78,7 +78,7 @@ namespace SAU
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Location = new System.Drawing.Point(34, 152);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(116, 35);
             this.btnSair.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace SAU
             // 
             this.btnContatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContatos.Location = new System.Drawing.Point(34, 88);
-            this.btnContatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnContatos.Margin = new System.Windows.Forms.Padding(4);
             this.btnContatos.Name = "btnContatos";
             this.btnContatos.Size = new System.Drawing.Size(116, 35);
             this.btnContatos.TabIndex = 2;
@@ -102,7 +102,7 @@ namespace SAU
             // 
             this.btnChamados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChamados.Location = new System.Drawing.Point(34, 17);
-            this.btnChamados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChamados.Margin = new System.Windows.Forms.Padding(4);
             this.btnChamados.Name = "btnChamados";
             this.btnChamados.Size = new System.Drawing.Size(116, 35);
             this.btnChamados.TabIndex = 1;
@@ -120,7 +120,7 @@ namespace SAU
             this.Controls.Add(this.pctPrincipal);
             this.Controls.Add(this.lblUsuario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPrincipal";
             this.Text = "Sistema de Atendimento ao Usuário";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

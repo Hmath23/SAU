@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcesso.Designer.cs">
+      <DependentUpon>frmAcesso.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChamados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAcesso.resx">
+      <DependentUpon>frmAcesso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChamados.resx">
       <DependentUpon>frmChamados.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,10 @@
     <ProjectReference Include="..\AcessoBanco\AcessoBanco.csproj">
       <Project>{386bda12-07f3-41aa-a8b4-84c41c44b8ef}</Project>
       <Name>AcessoBanco</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransferenciaDados\TransferenciaDados.csproj">
+      <Project>{6e876df7-06c8-46d1-9754-c5a026591ef5}</Project>
+      <Name>TransferenciaDados</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

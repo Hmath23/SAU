@@ -53,8 +53,8 @@ namespace SAU
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.grpContatos = new System.Windows.Forms.GroupBox();
-            this.lstContatos = new System.Windows.Forms.ListBox();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.lstContatos = new System.Windows.Forms.ListBox();
             this.mskCep = new System.Windows.Forms.MaskedTextBox();
             this.grpContatos.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +106,7 @@ namespace SAU
             this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnListar
             // 
@@ -291,7 +292,7 @@ namespace SAU
             this.grpContatos.Controls.Add(this.btnFechar);
             this.grpContatos.Controls.Add(this.lstContatos);
             this.grpContatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpContatos.Location = new System.Drawing.Point(198, 12);
+            this.grpContatos.Location = new System.Drawing.Point(167, 12);
             this.grpContatos.Name = "grpContatos";
             this.grpContatos.Size = new System.Drawing.Size(377, 272);
             this.grpContatos.TabIndex = 101;
@@ -299,15 +300,6 @@ namespace SAU
             this.grpContatos.Tag = "";
             this.grpContatos.Text = "Relação Contatos";
             this.grpContatos.Visible = false;
-            // 
-            // lstContatos
-            // 
-            this.lstContatos.FormattingEnabled = true;
-            this.lstContatos.ItemHeight = 20;
-            this.lstContatos.Location = new System.Drawing.Point(29, 36);
-            this.lstContatos.Name = "lstContatos";
-            this.lstContatos.Size = new System.Drawing.Size(311, 184);
-            this.lstContatos.TabIndex = 0;
             // 
             // btnFechar
             // 
@@ -318,6 +310,15 @@ namespace SAU
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // lstContatos
+            // 
+            this.lstContatos.FormattingEnabled = true;
+            this.lstContatos.ItemHeight = 20;
+            this.lstContatos.Location = new System.Drawing.Point(29, 36);
+            this.lstContatos.Name = "lstContatos";
+            this.lstContatos.Size = new System.Drawing.Size(311, 184);
+            this.lstContatos.TabIndex = 0;
             // 
             // mskCep
             // 
@@ -361,6 +362,7 @@ namespace SAU
             this.Controls.Add(this.lblNome);
             this.Name = "frmContatos";
             this.Text = "Cadastro de Contatos";
+            this.Load += new System.EventHandler(this.frmContatos_Load);
             this.grpContatos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

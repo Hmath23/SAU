@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using TransferenciaDados;
+
 namespace SAU
 {
     public partial class frmContatos : Form
@@ -89,9 +91,43 @@ namespace SAU
             btnSair.Enabled = true;
         }
 
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //Instanciar as Classes
+            SalvarContatos salvarContatos = new SalvarContatos();
+            ContatosDTO dados = new ContatosDTO();
+
+            //Popular a classe
+            dados.nome = txtNome.Text;
+            dados.endereco = txtEndereco.Text;
+            dados.numero = Convert.ToInt32(txtNumeroEndereco.Text);
+            dados.bairro = txtBairro.Text;
+            dados.cidade = txtCidade.Text;
+            dados.uf = txtUF.Text;
+            dados.cep = mskCep.Text;
+            dados.telefone = txtTelefone.Text;
+            dados.email = txtEmail.Text;
+
+            //chamar o método
+            salvarContatos.ContatosIncuir(dados);
+        }
+
+
+
+
+
+
+
         private void txtCep_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void frmContatos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

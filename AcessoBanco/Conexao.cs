@@ -14,8 +14,10 @@ using AcessoBanco.Properties;
 
 namespace AcessoBanco
 {
-    class Conexao
+    public class Conexao
     {
+        //Irá receber as mesnagens do mysql exceptions
+        public static string mensagem = string.Empty;
         //Criar Conexão
         private static string strConn = Settings.Default.strConexao;
         // representa a conexão com o banco
@@ -37,7 +39,8 @@ namespace AcessoBanco
                 // retorna a variável como nulo
                 conn = null;
                 // apresentar a mensagem de exceção
-                throw e;
+                //throw e;
+                mensagem = e.Message.ToString();
             }
             return conn;
         }
@@ -56,7 +59,8 @@ namespace AcessoBanco
                 // retorna a variável como nulo
                 conn = null;
                 // apresentar a mensagem de exceção
-                throw e;
+                //throw e;
+                mensagem = e.Message.ToString();
             }
             return conn;
         }
