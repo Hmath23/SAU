@@ -60,9 +60,7 @@ namespace TransferenciaDados
                     }
                 }
                 dr.Close();
-
                 Conexao.fecharConexao();
-
             }
             catch (MySqlException e)
             {

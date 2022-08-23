@@ -101,5 +101,10 @@ namespace SAU
             }
 
         }
+
+        private void frmIdade_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

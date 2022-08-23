@@ -93,9 +93,19 @@ namespace SAU
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            foreach (Control item in this.Controls)
+            {
+                if (item is TextBox && String.IsNullOrEmpty(item.Text))
+                {
+                    item.Focus();
+                    return;
+                }
+            }
+
             //Instanciar as Classes
             SalvarContatos salvarContatos = new SalvarContatos();
             ContatosDTO dados = new ContatosDTO();
+
 
             //Popular a classe
             dados.nome = txtNome.Text;
@@ -110,13 +120,21 @@ namespace SAU
 
             //chamar o método
             salvarContatos.ContatosIncuir(dados);
+
+            //Validar o resultado
+            if (dados.codigo != 0)
+            {
+                //Popular o campo código
+                txtCodigo.Text = dados.codigo.ToString();
+                MessageBox.Show("Cadastro realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível realizar o cadastro - " + dados.mensagens, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
-
-
-
-
-
-
 
         private void txtCep_TextChanged(object sender, EventArgs e)
         {

@@ -292,7 +292,7 @@ namespace SAU
             this.grpContatos.Controls.Add(this.btnFechar);
             this.grpContatos.Controls.Add(this.lstContatos);
             this.grpContatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpContatos.Location = new System.Drawing.Point(167, 12);
+            this.grpContatos.Location = new System.Drawing.Point(236, 26);
             this.grpContatos.Name = "grpContatos";
             this.grpContatos.Size = new System.Drawing.Size(377, 272);
             this.grpContatos.TabIndex = 101;

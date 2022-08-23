@@ -124,6 +124,7 @@ namespace SAU
             this.Controls.Add(this.lblNome);
             this.Name = "frmIdade";
             this.Text = "Variáveis";
+            this.Load += new System.EventHandler(this.frmIdade_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
