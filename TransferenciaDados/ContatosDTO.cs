@@ -43,7 +43,7 @@ namespace TransferenciaDados
                 cmd.Parameters.AddWithValue("@pbairro", dados.bairro);
                 cmd.Parameters.AddWithValue("@pcidade", dados.cidade);
                 cmd.Parameters.AddWithValue("@puf", dados.uf);
-                cmd.Parameters.AddWithValue("@cep", dados.cep);
+                cmd.Parameters.AddWithValue("@pcep", dados.cep);
                 cmd.Parameters.AddWithValue("@ptelefone", dados.telefone);
                 cmd.Parameters.AddWithValue("@pemail", dados.email);
 

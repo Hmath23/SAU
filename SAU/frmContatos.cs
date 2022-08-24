@@ -41,7 +41,7 @@ namespace SAU
         {
             //Rotina para sair do form;
             //Enviar mensagem
-            if(MessageBox.Show("Deseja realemte sair?","Aviso",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realemte sair?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Close();
             }
@@ -93,45 +93,115 @@ namespace SAU
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            foreach (Control item in this.Controls)
+            /*foreach (Control item in this.Controls)
             {
-                if (item is TextBox && String.IsNullOrEmpty(item.Text))
+                if (item is TextBox)
                 {
-                    item.Focus();
-                    return;
+                    if (String.IsNullOrEmpty(item.Text))
+                    {
+                        item.BackColor = Color.Yellow;
+                        item.Focus();
+                    }
+                    else
+                    {
+                        item.BackColor = Color.White;
+                    }
+                }
+            }*/
+            //Definir variável para receber o nome do textbox
+            TextBox textBox = new TextBox();
+            //Criar uma variável de controle para indicar o textbox que irá receber o focus/msg
+            bool finalizar = false;
+            //Criar uma consulta LINQ
+            var controle = from ctrl in this.Controls.OfType<TextBox>()
+                           where ctrl.Name != "txtCodigo"
+                           orderby ctrl.TabIndex
+                           select ctrl;
+
+           
+            //
+            foreach (var ctrlTxt in controle)
+            {
+                if(ctrlTxt.Text == String.Empty)
+                {
+                    finalizar = true;
+                    textBox.Name = ctrlTxt.Name;
+                    ctrlTxt.Focus();
+                    break;
                 }
             }
 
-            //Instanciar as Classes
-            SalvarContatos salvarContatos = new SalvarContatos();
-            ContatosDTO dados = new ContatosDTO();
-
-
-            //Popular a classe
-            dados.nome = txtNome.Text;
-            dados.endereco = txtEndereco.Text;
-            dados.numero = Convert.ToInt32(txtNumeroEndereco.Text);
-            dados.bairro = txtBairro.Text;
-            dados.cidade = txtCidade.Text;
-            dados.uf = txtUF.Text;
-            dados.cep = mskCep.Text;
-            dados.telefone = txtTelefone.Text;
-            dados.email = txtEmail.Text;
-
-            //chamar o método
-            salvarContatos.ContatosIncuir(dados);
-
-            //Validar o resultado
-            if (dados.codigo != 0)
-            {
-                //Popular o campo código
-                txtCodigo.Text = dados.codigo.ToString();
-                MessageBox.Show("Cadastro realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(txtEmail.Text != string.Empty) { 
+             //Remover a máscara -formatação
+                mskCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                if (mskCep.Text == String.Empty)
+                {
+                    MessageBox.Show("Favor infomar o CEP ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    mskCep.Focus();
+                    finalizar = true;
+                }
+                else
+                {
+                    mskCep.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
+                }
             }
-            else
+
+            
+
+            //Apresentar a mensagem para preencher os campos
+            if (finalizar == true && mskCep.Text != string.Empty)
             {
-                MessageBox.Show("Não foi possível realizar o cadastro - " + dados.mensagens, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Favor preencher o campo " + textBox.Name.Substring(3, textBox.Name.Length - 3), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
+            if (finalizar == false)
+            {
+                //Instanciar as Classes
+                SalvarContatos salvarContatos = new SalvarContatos();
+                ContatosDTO dados = new ContatosDTO();
+
+
+                //Popular a classe
+                dados.nome = txtNome.Text;
+                dados.endereco = txtEndereco.Text;
+                dados.numero = Convert.ToInt32(txtNumeroEndereco.Text);
+                dados.bairro = txtBairro.Text;
+                dados.cidade = txtCidade.Text;
+                dados.uf = txtUF.Text;
+                dados.cep = mskCep.Text;
+                dados.telefone = txtTelefone.Text;
+                dados.email = txtEmail.Text;
+
+                //chamar o método
+                salvarContatos.ContatosIncuir(dados);
+
+                //Validar o resultado
+                if (dados.codigo != 0)
+                {
+                    //Popular o campo código
+                    txtCodigo.Text = dados.codigo.ToString();
+                    MessageBox.Show("Cadastro realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível realizar o cadastro - " + dados.mensagens, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                txtNome.Enabled = false;
+                txtEndereco.Enabled = false;
+                txtNumeroEndereco.Enabled = false;
+                txtBairro.Enabled = false;
+                txtCidade.Enabled = false;
+                txtUF.Enabled = false;
+                mskCep.Enabled = false;
+                txtTelefone.Enabled = false;
+                txtEmail.Enabled = false;
+                btnSalvar.Enabled = false;
+            }
+
+
+
+
 
 
         }
@@ -146,6 +216,24 @@ namespace SAU
 
         }
 
-        
+        private void txtNumeroEndereco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNumeroEndereco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+               (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
