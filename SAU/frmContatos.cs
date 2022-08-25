@@ -72,6 +72,7 @@ namespace SAU
 
             //Desabilitar os controles abaixo
             tratamentoCampos.Desbloquear(this);
+            txtCodigo.Enabled = false;
 
             btnSalvar.Enabled = true;
             btnListar.Enabled = true;
@@ -172,6 +173,38 @@ namespace SAU
             }
         }
 
+        private void lstContatos_Click(object sender, EventArgs e)
+        {
+            //extrair o código do contato selecionado
+            DataRowView drv = (DataRowView)lstContatos.Items[lstContatos.SelectedIndex];
+            //instanciar a clase consultar contatos
+            ConsultarContatos consultarContatos = new ConsultarContatos();
+            ContatosDTO dados = new ContatosDTO();
+            consultarContatos.ContatosMostrar(dados);
+
+            //Percorrer o datatable para localizar os dados do contato selecionado
+            for (int i = 0; i < consultarContatos.ContatosDataTable.Rows.Count; i++)
+            {
+                if (drv["codContato"].ToString() == consultarContatos.ContatosDataTable.Rows[i]["codContato"].ToString())
+                {
+                    txtCodigo.Text = consultarContatos.ContatosDataTable.Rows[i]["codContato"].ToString();
+                    txtNome.Text = consultarContatos.ContatosDataTable.Rows[i]["nomedoContato"].ToString();
+                    txtEndereco.Text = consultarContatos.ContatosDataTable.Rows[i]["enderecoContato"].ToString();
+                    txtBairro.Text = consultarContatos.ContatosDataTable.Rows[i]["bairro"].ToString();
+                    txtCidade.Text = consultarContatos.ContatosDataTable.Rows[i]["cidade"].ToString();
+                    txtUF.Text = consultarContatos.ContatosDataTable.Rows[i]["uf"].ToString();
+                    mskCep.Text = consultarContatos.ContatosDataTable.Rows[i]["cep"].ToString();
+                    txtTelefone.Text = consultarContatos.ContatosDataTable.Rows[i]["telefoneContato"].ToString();
+                    txtEmail.Text = consultarContatos.ContatosDataTable.Rows[i]["emailContato"].ToString();
+
+                    btnFechar_Click(null, null);
+                }
+            }
+            tratamentoCampos.Bloquear(this);
+            btnSalvar.Text = "Novo";
+            ncadastro = true;
+        }
+
         private void txtCep_TextChanged(object sender, EventArgs e)
         {
 
@@ -202,33 +235,5 @@ namespace SAU
             }
         }
 
-        private void lstContatos_Click(object sender, EventArgs e)
-        {
-            //extrair o código do contato selecionado
-            DataRowView drv = (DataRowView)lstContatos.Items[lstContatos.SelectedIndex];
-            //instanciar a clase consultar contatos
-            ConsultarContatos consultarContatos = new ConsultarContatos();
-            ContatosDTO dados = new ContatosDTO();
-            consultarContatos.ContatosMostrar(dados);
-
-            //Percorrer o datatable para localizar os dados do contato selecionado
-            for (int i = 0; i < consultarContatos.ContatosDataTable.Rows.Count; i++)
-            {
-                if(drv["codContato"].ToString() == consultarContatos.ContatosDataTable.Rows[i]["codContato"].ToString())
-                {
-                    txtCodigo.Text = consultarContatos.ContatosDataTable.Rows[i]["codContato"].ToString();
-                    txtNome.Text = consultarContatos.ContatosDataTable.Rows[i]["nomedoContato"].ToString();
-                    txtEndereco.Text = consultarContatos.ContatosDataTable.Rows[i]["enderecoContato"].ToString();
-                    txtBairro.Text = consultarContatos.ContatosDataTable.Rows[i]["bairro"].ToString();
-                    txtCidade.Text = consultarContatos.ContatosDataTable.Rows[i]["cidade"].ToString();
-                    txtUF.Text = consultarContatos.ContatosDataTable.Rows[i]["uf"].ToString();
-                    mskCep.Text = consultarContatos.ContatosDataTable.Rows[i]["cep"].ToString();
-                    txtTelefone.Text = consultarContatos.ContatosDataTable.Rows[i]["telefoneContato"].ToString();
-                    txtEmail.Text = consultarContatos.ContatosDataTable.Rows[i]["emailContato"].ToString();
-
-                    btnFechar_Click(null, null);
-                }
-            }
-        }
     }
 }
