@@ -68,4 +68,28 @@ namespace TransferenciaDados
             }
         }
     }
+    public class ConsultarContatos
+    {
+        public DataTable ContatosDataTable;
+
+        public void ContatosMostrar (ContatosDTO dados)
+        {
+            try
+            {
+                string sql = "Select * from tbContatos order by nomedoContato asc";
+                //Interação de dados
+                MySqlDataAdapter ContatosDataAdapter = new MySqlDataAdapter(sql, Conexao.obterConexao());
+                //Instanciar o objeto
+                ContatosDataTable = new DataTable();
+                //Popular o DataTable
+                ContatosDataAdapter.Fill(ContatosDataTable);
+
+                Conexao.fecharConexao();
+            }
+            catch (MySqlException e)
+            {
+                dados.mensagens = "Erro - ConsultarContatos - MostrarContatos " + e.Message.ToString();
+            }
+        }
+    }
 }

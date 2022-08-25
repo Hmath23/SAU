@@ -14,6 +14,9 @@ namespace SAU
 {
     public partial class frmContatos : Form
     {
+        TratamentoCampos tratamentoCampos = new TratamentoCampos();
+        bool ncadastro = false;
+
         public frmContatos()
         {
             InitializeComponent();
@@ -21,20 +24,8 @@ namespace SAU
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            //Rotina para limpar os controles
-            txtCodigo.Clear();
-            txtNome.Clear();
-            txtEndereco.Clear();
-            txtNumeroEndereco.Clear();
-            txtBairro.Clear();
-            txtCidade.Clear();
-            txtUF.Clear();
-            mskCep.Clear();
-            txtTelefone.Clear();
-            txtEmail.Clear();
-
-            //Posicionar o cursor
-            txtCodigo.Focus();
+            tratamentoCampos.Limpar(this);
+            txtNome.Focus();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -49,19 +40,24 @@ namespace SAU
 
         private void btnListar_Click(object sender, EventArgs e)
         {
+            ConsultarContatos consultarContatos = new ConsultarContatos();
+            ContatosDTO dados = new ContatosDTO();
+
+            consultarContatos.ContatosMostrar(dados);
+            lstContatos.DataSource = null;
+            lstContatos.Items.Clear();
+
+            //popular o listbox
+            //Apenas o nome será visível, o código não
+            lstContatos.ValueMember = "codContato";
+            lstContatos.DisplayMember = "nomedoContato";
+            lstContatos.DataSource = consultarContatos.ContatosDataTable;
+
             //Tornar visível o grupo grpContatos
             grpContatos.Visible = true;
 
             //Habilitar os controles abaixo
-            txtNome.Enabled = false;
-            txtEndereco.Enabled = false;
-            txtNumeroEndereco.Enabled = false;
-            txtBairro.Enabled = false;
-            txtCidade.Enabled = false;
-            txtUF.Enabled = false;
-            mskCep.Enabled = false;
-            txtTelefone.Enabled = false;
-            txtEmail.Enabled = false;
+            tratamentoCampos.Bloquear(this);
 
             btnSalvar.Enabled = false;
             btnListar.Enabled = false;
@@ -75,15 +71,7 @@ namespace SAU
             grpContatos.Visible = false;
 
             //Desabilitar os controles abaixo
-            txtNome.Enabled = true;
-            txtEndereco.Enabled = true;
-            txtNumeroEndereco.Enabled = true;
-            txtBairro.Enabled = true;
-            txtCidade.Enabled = true;
-            txtUF.Enabled = true;
-            mskCep.Enabled = true;
-            txtTelefone.Enabled = true;
-            txtEmail.Enabled = true;
+            tratamentoCampos.Desbloquear(this);
 
             btnSalvar.Enabled = true;
             btnListar.Enabled = true;
@@ -93,21 +81,17 @@ namespace SAU
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            /*foreach (Control item in this.Controls)
+           
+            if (ncadastro == true)
             {
-                if (item is TextBox)
-                {
-                    if (String.IsNullOrEmpty(item.Text))
-                    {
-                        item.BackColor = Color.Yellow;
-                        item.Focus();
-                    }
-                    else
-                    {
-                        item.BackColor = Color.White;
-                    }
-                }
-            }*/
+                tratamentoCampos.Desbloquear(this);
+                tratamentoCampos.Limpar(this);
+                txtCodigo.Enabled = false;
+                btnSalvar.Text = "Salvar";
+                ncadastro = false;
+            }
+            else 
+            { 
             //Definir variável para receber o nome do textbox
             TextBox textBox = new TextBox();
             //Criar uma variável de controle para indicar o textbox que irá receber o focus/msg
@@ -118,8 +102,6 @@ namespace SAU
                            orderby ctrl.TabIndex
                            select ctrl;
 
-           
-            //
             foreach (var ctrlTxt in controle)
             {
                 if(ctrlTxt.Text == String.Empty)
@@ -131,8 +113,8 @@ namespace SAU
                 }
             }
 
-            if(txtEmail.Text != string.Empty) { 
-             //Remover a máscara -formatação
+            if(txtUF.Text != string.Empty && txtTelefone.Text == string.Empty) {
+                //Remover a máscara -formatação
                 mskCep.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                 if (mskCep.Text == String.Empty)
                 {
@@ -146,64 +128,48 @@ namespace SAU
                 }
             }
 
-            
-
             //Apresentar a mensagem para preencher os campos
-            if (finalizar == true && mskCep.Text != string.Empty)
+            if (finalizar == true && mskCep.Text != String.Empty)
             {
                 MessageBox.Show("Favor preencher o campo " + textBox.Name.Substring(3, textBox.Name.Length - 3), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-            if (finalizar == false)
-            {
-                //Instanciar as Classes
-                SalvarContatos salvarContatos = new SalvarContatos();
-                ContatosDTO dados = new ContatosDTO();
-
-
-                //Popular a classe
-                dados.nome = txtNome.Text;
-                dados.endereco = txtEndereco.Text;
-                dados.numero = Convert.ToInt32(txtNumeroEndereco.Text);
-                dados.bairro = txtBairro.Text;
-                dados.cidade = txtCidade.Text;
-                dados.uf = txtUF.Text;
-                dados.cep = mskCep.Text;
-                dados.telefone = txtTelefone.Text;
-                dados.email = txtEmail.Text;
-
-                //chamar o método
-                salvarContatos.ContatosIncuir(dados);
-
-                //Validar o resultado
-                if (dados.codigo != 0)
+                if (finalizar == false)
                 {
-                    //Popular o campo código
-                    txtCodigo.Text = dados.codigo.ToString();
-                    MessageBox.Show("Cadastro realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Não foi possível realizar o cadastro - " + dados.mensagens, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    //Instanciar as Classes
+                    SalvarContatos salvarContatos = new SalvarContatos();
+                    ContatosDTO dados = new ContatosDTO();
 
-                txtNome.Enabled = false;
-                txtEndereco.Enabled = false;
-                txtNumeroEndereco.Enabled = false;
-                txtBairro.Enabled = false;
-                txtCidade.Enabled = false;
-                txtUF.Enabled = false;
-                mskCep.Enabled = false;
-                txtTelefone.Enabled = false;
-                txtEmail.Enabled = false;
-                btnSalvar.Enabled = false;
+                    //Popular a classe
+                    dados.nome = txtNome.Text;
+                    dados.endereco = txtEndereco.Text;
+                    dados.numero = Convert.ToInt32(txtNumeroEndereco.Text);
+                    dados.bairro = txtBairro.Text;
+                    dados.cidade = txtCidade.Text;
+                    dados.uf = txtUF.Text;
+                    dados.cep = mskCep.Text;
+                    dados.telefone = txtTelefone.Text;
+                    dados.email = txtEmail.Text;
+
+                    //chamar o método
+                    salvarContatos.ContatosIncuir(dados);
+
+                    //Validar o resultado
+                    if (dados.codigo != 0)
+                    {
+                        //Popular o campo código
+                        txtCodigo.Text = dados.codigo.ToString();
+                        MessageBox.Show("Cadastro realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        tratamentoCampos.Bloquear(this);
+                        btnSalvar.Text = "Novo";
+                        ncadastro = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possível realizar o cadastro - " + dados.mensagens, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-
-
-
-
-
-
         }
 
         private void txtCep_TextChanged(object sender, EventArgs e)
@@ -233,6 +199,35 @@ namespace SAU
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void lstContatos_Click(object sender, EventArgs e)
+        {
+            //extrair o código do contato selecionado
+            DataRowView drv = (DataRowView)lstContatos.Items[lstContatos.SelectedIndex];
+            //instanciar a clase consultar contatos
+            ConsultarContatos consultarContatos = new ConsultarContatos();
+            ContatosDTO dados = new ContatosDTO();
+            consultarContatos.ContatosMostrar(dados);
+
+            //Percorrer o datatable para localizar os dados do contato selecionado
+            for (int i = 0; i < consultarContatos.ContatosDataTable.Rows.Count; i++)
+            {
+                if(drv["codContato"].ToString() == consultarContatos.ContatosDataTable.Rows[i]["codContato"].ToString())
+                {
+                    txtCodigo.Text = consultarContatos.ContatosDataTable.Rows[i]["codContato"].ToString();
+                    txtNome.Text = consultarContatos.ContatosDataTable.Rows[i]["nomedoContato"].ToString();
+                    txtEndereco.Text = consultarContatos.ContatosDataTable.Rows[i]["enderecoContato"].ToString();
+                    txtBairro.Text = consultarContatos.ContatosDataTable.Rows[i]["bairro"].ToString();
+                    txtCidade.Text = consultarContatos.ContatosDataTable.Rows[i]["cidade"].ToString();
+                    txtUF.Text = consultarContatos.ContatosDataTable.Rows[i]["uf"].ToString();
+                    mskCep.Text = consultarContatos.ContatosDataTable.Rows[i]["cep"].ToString();
+                    txtTelefone.Text = consultarContatos.ContatosDataTable.Rows[i]["telefoneContato"].ToString();
+                    txtEmail.Text = consultarContatos.ContatosDataTable.Rows[i]["emailContato"].ToString();
+
+                    btnFechar_Click(null, null);
+                }
             }
         }
     }

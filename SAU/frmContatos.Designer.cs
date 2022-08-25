@@ -294,7 +294,7 @@ namespace SAU
             this.grpContatos.Controls.Add(this.btnFechar);
             this.grpContatos.Controls.Add(this.lstContatos);
             this.grpContatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpContatos.Location = new System.Drawing.Point(153, 26);
+            this.grpContatos.Location = new System.Drawing.Point(267, 62);
             this.grpContatos.Name = "grpContatos";
             this.grpContatos.Size = new System.Drawing.Size(377, 272);
             this.grpContatos.TabIndex = 101;
@@ -321,6 +321,7 @@ namespace SAU
             this.lstContatos.Name = "lstContatos";
             this.lstContatos.Size = new System.Drawing.Size(311, 184);
             this.lstContatos.TabIndex = 0;
+            this.lstContatos.Click += new System.EventHandler(this.lstContatos_Click);
             // 
             // mskCep
             // 
