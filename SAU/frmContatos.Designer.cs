@@ -294,7 +294,7 @@ namespace SAU
             this.grpContatos.Controls.Add(this.btnFechar);
             this.grpContatos.Controls.Add(this.lstContatos);
             this.grpContatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpContatos.Location = new System.Drawing.Point(288, 31);
+            this.grpContatos.Location = new System.Drawing.Point(31, 12);
             this.grpContatos.Name = "grpContatos";
             this.grpContatos.Size = new System.Drawing.Size(377, 272);
             this.grpContatos.TabIndex = 101;
@@ -337,7 +337,7 @@ namespace SAU
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(889, 315);
+            this.ClientSize = new System.Drawing.Size(809, 315);
             this.Controls.Add(this.grpContatos);
             this.Controls.Add(this.mskCep);
             this.Controls.Add(this.txtEmail);

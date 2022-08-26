@@ -135,40 +135,40 @@ namespace SAU
                 MessageBox.Show("Favor preencher o campo " + textBox.Name.Substring(3, textBox.Name.Length - 3), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-                if (finalizar == false)
+            if (finalizar == false)
+            {
+                //Instanciar as Classes
+                SalvarContatos salvarContatos = new SalvarContatos();
+                ContatosDTO dados = new ContatosDTO();
+
+                //Popular a classe
+                dados.nome = txtNome.Text;
+                dados.endereco = txtEndereco.Text;
+                dados.numero = Convert.ToInt32(txtNumeroEndereco.Text);
+                dados.bairro = txtBairro.Text;
+                dados.cidade = txtCidade.Text;
+                dados.uf = txtUF.Text;
+                dados.cep = mskCep.Text;
+                dados.telefone = txtTelefone.Text;
+                dados.email = txtEmail.Text;
+
+                //chamar o método
+                salvarContatos.ContatosIncuir(dados);
+
+                //Validar o resultado
+                if (dados.codigo != 0)
                 {
-                    //Instanciar as Classes
-                    SalvarContatos salvarContatos = new SalvarContatos();
-                    ContatosDTO dados = new ContatosDTO();
-
-                    //Popular a classe
-                    dados.nome = txtNome.Text;
-                    dados.endereco = txtEndereco.Text;
-                    dados.numero = Convert.ToInt32(txtNumeroEndereco.Text);
-                    dados.bairro = txtBairro.Text;
-                    dados.cidade = txtCidade.Text;
-                    dados.uf = txtUF.Text;
-                    dados.cep = mskCep.Text;
-                    dados.telefone = txtTelefone.Text;
-                    dados.email = txtEmail.Text;
-
-                    //chamar o método
-                    salvarContatos.ContatosIncuir(dados);
-
-                    //Validar o resultado
-                    if (dados.codigo != 0)
-                    {
-                        //Popular o campo código
-                        txtCodigo.Text = dados.codigo.ToString();
-                        MessageBox.Show("Cadastro realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        tratamentoCampos.Bloquear(this);
-                        btnSalvar.Text = "Novo";
-                        ncadastro = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Não foi possível realizar o cadastro - " + dados.mensagens, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    //Popular o campo código
+                    txtCodigo.Text = dados.codigo.ToString();
+                    MessageBox.Show("Cadastro realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tratamentoCampos.Bloquear(this);
+                    btnSalvar.Text = "Novo";
+                    ncadastro = true;
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível realizar o cadastro - " + dados.mensagens, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 }
             }
         }
@@ -204,6 +204,12 @@ namespace SAU
             btnSalvar.Text = "Novo";
             ncadastro = true;
         }
+
+
+
+
+
+
 
         private void txtCep_TextChanged(object sender, EventArgs e)
         {

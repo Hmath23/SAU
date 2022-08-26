@@ -57,7 +57,7 @@ namespace SAU
             this.pctPrincipal.Location = new System.Drawing.Point(225, 32);
             this.pctPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.pctPrincipal.Name = "pctPrincipal";
-            this.pctPrincipal.Size = new System.Drawing.Size(530, 474);
+            this.pctPrincipal.Size = new System.Drawing.Size(530, 449);
             this.pctPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctPrincipal.TabIndex = 1;
             this.pctPrincipal.TabStop = false;
@@ -89,7 +89,7 @@ namespace SAU
             // btnContatos
             // 
             this.btnContatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContatos.Location = new System.Drawing.Point(34, 88);
+            this.btnContatos.Location = new System.Drawing.Point(34, 84);
             this.btnContatos.Margin = new System.Windows.Forms.Padding(4);
             this.btnContatos.Name = "btnContatos";
             this.btnContatos.Size = new System.Drawing.Size(116, 35);
