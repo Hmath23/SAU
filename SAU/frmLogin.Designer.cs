@@ -37,13 +37,13 @@ namespace SAU
             this.btnOk = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.pnlMudarSenha = new System.Windows.Forms.Panel();
-            this.lblSenhaAtual = new System.Windows.Forms.Label();
-            this.lblNovaSenha = new System.Windows.Forms.Label();
-            this.lblRepetirSenha = new System.Windows.Forms.Label();
-            this.mskSenhaAtual = new System.Windows.Forms.MaskedTextBox();
-            this.mskNovaSenha = new System.Windows.Forms.MaskedTextBox();
-            this.mskRepetirSenha = new System.Windows.Forms.MaskedTextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.mskRepetirSenha = new System.Windows.Forms.MaskedTextBox();
+            this.mskNovaSenha = new System.Windows.Forms.MaskedTextBox();
+            this.mskSenhaAtual = new System.Windows.Forms.MaskedTextBox();
+            this.lblRepetirSenha = new System.Windows.Forms.Label();
+            this.lblNovaSenha = new System.Windows.Forms.Label();
+            this.lblSenhaAtual = new System.Windows.Forms.Label();
             this.pnlMudarSenha.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,7 @@ namespace SAU
             this.btnOk.TabIndex = 5;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnSair
             // 
@@ -128,65 +129,14 @@ namespace SAU
             this.pnlMudarSenha.Controls.Add(this.lblNovaSenha);
             this.pnlMudarSenha.Controls.Add(this.lblSenhaAtual);
             this.pnlMudarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlMudarSenha.Location = new System.Drawing.Point(409, 12);
+            this.pnlMudarSenha.Location = new System.Drawing.Point(422, 12);
             this.pnlMudarSenha.Name = "pnlMudarSenha";
-            this.pnlMudarSenha.Size = new System.Drawing.Size(263, 237);
+            this.pnlMudarSenha.Size = new System.Drawing.Size(285, 237);
             this.pnlMudarSenha.TabIndex = 7;
-            // 
-            // lblSenhaAtual
-            // 
-            this.lblSenhaAtual.AutoSize = true;
-            this.lblSenhaAtual.Location = new System.Drawing.Point(4, 10);
-            this.lblSenhaAtual.Name = "lblSenhaAtual";
-            this.lblSenhaAtual.Size = new System.Drawing.Size(97, 20);
-            this.lblSenhaAtual.TabIndex = 0;
-            this.lblSenhaAtual.Text = "Senha Atual";
-            // 
-            // lblNovaSenha
-            // 
-            this.lblNovaSenha.AutoSize = true;
-            this.lblNovaSenha.Location = new System.Drawing.Point(4, 62);
-            this.lblNovaSenha.Name = "lblNovaSenha";
-            this.lblNovaSenha.Size = new System.Drawing.Size(96, 20);
-            this.lblNovaSenha.TabIndex = 1;
-            this.lblNovaSenha.Text = "Nova Senha";
-            // 
-            // lblRepetirSenha
-            // 
-            this.lblRepetirSenha.AutoSize = true;
-            this.lblRepetirSenha.Location = new System.Drawing.Point(4, 114);
-            this.lblRepetirSenha.Name = "lblRepetirSenha";
-            this.lblRepetirSenha.Size = new System.Drawing.Size(112, 20);
-            this.lblRepetirSenha.TabIndex = 2;
-            this.lblRepetirSenha.Text = "Repetir Senha";
-            // 
-            // mskSenhaAtual
-            // 
-            this.mskSenhaAtual.Location = new System.Drawing.Point(7, 33);
-            this.mskSenhaAtual.Name = "mskSenhaAtual";
-            this.mskSenhaAtual.PasswordChar = '*';
-            this.mskSenhaAtual.Size = new System.Drawing.Size(226, 26);
-            this.mskSenhaAtual.TabIndex = 3;
-            // 
-            // mskNovaSenha
-            // 
-            this.mskNovaSenha.Location = new System.Drawing.Point(7, 85);
-            this.mskNovaSenha.Name = "mskNovaSenha";
-            this.mskNovaSenha.PasswordChar = '*';
-            this.mskNovaSenha.Size = new System.Drawing.Size(226, 26);
-            this.mskNovaSenha.TabIndex = 4;
-            // 
-            // mskRepetirSenha
-            // 
-            this.mskRepetirSenha.Location = new System.Drawing.Point(7, 137);
-            this.mskRepetirSenha.Name = "mskRepetirSenha";
-            this.mskRepetirSenha.PasswordChar = '*';
-            this.mskRepetirSenha.Size = new System.Drawing.Size(226, 26);
-            this.mskRepetirSenha.TabIndex = 5;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(77, 169);
+            this.btnAlterar.Location = new System.Drawing.Point(97, 169);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(80, 30);
             this.btnAlterar.TabIndex = 6;
@@ -194,11 +144,65 @@ namespace SAU
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // mskRepetirSenha
+            // 
+            this.mskRepetirSenha.Location = new System.Drawing.Point(22, 137);
+            this.mskRepetirSenha.Name = "mskRepetirSenha";
+            this.mskRepetirSenha.PasswordChar = '*';
+            this.mskRepetirSenha.Size = new System.Drawing.Size(245, 26);
+            this.mskRepetirSenha.TabIndex = 5;
+            this.mskRepetirSenha.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskRepetirSenha_MaskInputRejected);
+            // 
+            // mskNovaSenha
+            // 
+            this.mskNovaSenha.Location = new System.Drawing.Point(22, 85);
+            this.mskNovaSenha.Name = "mskNovaSenha";
+            this.mskNovaSenha.PasswordChar = '*';
+            this.mskNovaSenha.Size = new System.Drawing.Size(245, 26);
+            this.mskNovaSenha.TabIndex = 4;
+            this.mskNovaSenha.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskNovaSenha_MaskInputRejected);
+            // 
+            // mskSenhaAtual
+            // 
+            this.mskSenhaAtual.Location = new System.Drawing.Point(22, 33);
+            this.mskSenhaAtual.Name = "mskSenhaAtual";
+            this.mskSenhaAtual.PasswordChar = '*';
+            this.mskSenhaAtual.Size = new System.Drawing.Size(245, 26);
+            this.mskSenhaAtual.TabIndex = 3;
+            this.mskSenhaAtual.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskSenhaAtual_MaskInputRejected);
+            // 
+            // lblRepetirSenha
+            // 
+            this.lblRepetirSenha.AutoSize = true;
+            this.lblRepetirSenha.Location = new System.Drawing.Point(80, 114);
+            this.lblRepetirSenha.Name = "lblRepetirSenha";
+            this.lblRepetirSenha.Size = new System.Drawing.Size(112, 20);
+            this.lblRepetirSenha.TabIndex = 2;
+            this.lblRepetirSenha.Text = "Repetir Senha";
+            // 
+            // lblNovaSenha
+            // 
+            this.lblNovaSenha.AutoSize = true;
+            this.lblNovaSenha.Location = new System.Drawing.Point(80, 62);
+            this.lblNovaSenha.Name = "lblNovaSenha";
+            this.lblNovaSenha.Size = new System.Drawing.Size(96, 20);
+            this.lblNovaSenha.TabIndex = 1;
+            this.lblNovaSenha.Text = "Nova Senha";
+            // 
+            // lblSenhaAtual
+            // 
+            this.lblSenhaAtual.AutoSize = true;
+            this.lblSenhaAtual.Location = new System.Drawing.Point(80, 10);
+            this.lblSenhaAtual.Name = "lblSenhaAtual";
+            this.lblSenhaAtual.Size = new System.Drawing.Size(97, 20);
+            this.lblSenhaAtual.TabIndex = 0;
+            this.lblSenhaAtual.Text = "Senha Atual";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 261);
+            this.ClientSize = new System.Drawing.Size(731, 261);
             this.Controls.Add(this.pnlMudarSenha);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnOk);

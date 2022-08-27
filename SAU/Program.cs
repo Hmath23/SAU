@@ -16,7 +16,14 @@ namespace SAU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            // Application.Run(new frmLogin());
+
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
+            if (frm.LoginSucesso)
+            {
+                Application.Run(new frmPrincipal());
+            }
         }
     }
 }

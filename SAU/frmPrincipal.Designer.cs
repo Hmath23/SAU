@@ -124,6 +124,7 @@ namespace SAU
             this.Name = "frmPrincipal";
             this.Text = "Sistema de Atendimento ao Usuário";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctPrincipal)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

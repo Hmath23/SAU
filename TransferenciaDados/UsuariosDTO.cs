@@ -27,7 +27,7 @@ namespace TransferenciaDados
     {
         public static string usuario { get; set; }
         public static string nomecompleto { get; set; }
-        public static string codperfil { get; set; }
+        public static int codperfil { get; set; }
     }
     public class ValidarUsuario
     {
@@ -47,15 +47,24 @@ namespace TransferenciaDados
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                 //verificar existencia de registros
-                if (dr.Read())
+                if (dr.HasRows)
                 {
                     //percorre os registros
                     while (dr.Read())
                     {
-                        //popular o resultado
-                        LoginSistema.usuario = dados.nomeusuario;
-                        LoginSistema.nomecompleto = dr.GetValue(2).ToString();
-                        dados.logado = Convert.ToInt32(dr.GetValue(1).ToString());
+                        //Verifiacar o retorno do parâmetro resultado
+                        int resultado = Convert.ToInt32(dr.GetValue(0).ToString());
+                        if (resultado > 0)
+                        {
+                            //popular o resultado
+                            LoginSistema.usuario = dados.nomeusuario;
+                            LoginSistema.nomecompleto = dr.GetValue(2).ToString();
+                            dados.logado = Convert.ToInt32(dr.GetValue(1).ToString());
+                        }
+                        else
+                        {
+                            dados.logado = resultado;
+                        }
                     }
                 }
                 dr.Close();
@@ -83,7 +92,7 @@ namespace TransferenciaDados
                 //executar os comandos
                 int registros = cmd.ExecuteNonQuery();
 
-                if(registros >= 1)
+                if (registros >= 1)
                 {
                     dados.mensagens = registros.ToString();
                 }
